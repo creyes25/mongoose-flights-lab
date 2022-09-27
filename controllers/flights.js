@@ -14,16 +14,22 @@ function createFlight(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('flights/new')
+    res.redirect('/flights/new')
   })
 }
 
 function index(req, res) {
   Flight.find({})
   .then(flights => {
-    flights
+    res.render('flights/index', {
+      flights,
+      title: 'All Flights'
+    })
   })
-  res.send('respond with a resource')
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
 }
 
 
