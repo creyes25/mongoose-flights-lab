@@ -2,6 +2,8 @@ import { Flight } from "../models/flight.js"
 
 
 function newFlight(req, res) {
+  const newFLight = new Flight()
+  console.log(newFLight)
   res.render('flights/new', {
     title: 'Add Flight'
   })
@@ -10,11 +12,11 @@ function newFlight(req, res) {
 function createFlight(req, res) {
   Flight.create(req.body)
   .then(flight => {
-    res.redirect('/flights/new')
+    res.redirect('/flights')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/flights/new')
+    res.redirect('/flights')
   })
 }
 
@@ -31,6 +33,7 @@ function index(req, res) {
     res.redirect('/flights')
   })
 }
+
 
 
 export {
