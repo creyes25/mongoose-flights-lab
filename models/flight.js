@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 
+
 const Schema = mongoose.Schema
 
 const ticketSchema = new Schema ({
@@ -32,7 +33,8 @@ const flightSchema = new Schema ({
     type: Date,
     default: oneYearFromNow()    
   },
-  tickets: [ticketSchema]
+  tickets: [ticketSchema],
+  // meals: {Schema.Types.ObjectId}
 }, {
   timestamps: true
 })
@@ -45,7 +47,6 @@ function oneYearFromNow() {
   return today
 }
 
-oneYearFromNow()
 const Flight = mongoose.model('Flight', flightSchema)
 
 export {
