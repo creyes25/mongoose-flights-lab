@@ -39,6 +39,7 @@
         <tr>
           <th>Seat</th>
           <th>Price</th>
+          <!-- <th></th> -->
         </tr>
       </thead>
       <tbody>
@@ -46,6 +47,9 @@
           <tr>
             <td><%= ticket.seat %> </td> 
             <td><%= ticket.price %> </td>
+            <!-- <td><form action="/flights/<%= flight._id %>" method="post">
+              <button type="submit">X</button>
+            </form></td> -->
           </tr>
         <% }) %>
       </tbody>
