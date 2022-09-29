@@ -4,9 +4,11 @@ import { Meal } from "../models/meal.js"
 
 function newFlight(req, res) {
   const newFLight = new Flight()
-
+  const depart = newFLight.departs
+  const departsDate = depart.toISOString().slice(0,16)
   res.render('flights/new', {
-    title: 'Add Flight'
+    title: 'Add Flight',
+    departsDate
   })
 }
 
